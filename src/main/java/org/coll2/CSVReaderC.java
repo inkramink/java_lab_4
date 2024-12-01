@@ -14,9 +14,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * The CSVReaderC class is responsible for reading a CSV file and converting its contents into a list of Person objects.
+ * It handles the parsing of the CSV file, mapping of departments, and creation of Person objects.
+ */
 public class CSVReaderC {
     private static final char SEPARATOR = ';';
 
+    /**
+     * Reads a CSV file and returns a list of Person objects.
+     *
+     * @param filePath the path to the CSV file
+     * @return a list of Person objects parsed from the CSV file
+     * @throws FileNotFoundException if the file is not found
+     */
     public List<Person> readCSV(String filePath) {
         List<Person> people = new ArrayList<>();
         Map<String, Department> departmentMap = new HashMap<>();
