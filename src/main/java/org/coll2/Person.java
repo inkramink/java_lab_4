@@ -1,5 +1,7 @@
 package org.coll2;
 
+import java.util.Objects;
+
 public class Person {
     private int id;
     private String name;
@@ -64,6 +66,24 @@ public class Person {
 
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return id == person.id &&
+                Double.compare(person.salary, salary) == 0 &&
+                Objects.equals(name, person.name) &&
+                Objects.equals(gender, person.gender) &&
+                Objects.equals(department, person.department) &&
+                Objects.equals(birthDate, person.birthDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, gender, department, salary, birthDate);
     }
 
     @Override

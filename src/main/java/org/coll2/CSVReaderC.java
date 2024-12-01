@@ -14,19 +14,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class CSVReaderС {
-    private static final String CSV_FILE_PATH = "foreign_names.csv";
+public class CSVReaderC {
     private static final char SEPARATOR = ';';
 
-    public List<Person> readCSV() {
+    public List<Person> readCSV(String filePath) {
         List<Person> people = new ArrayList<>();
         Map<String, Department> departmentMap = new HashMap<>();
         AtomicInteger departmentIdCounter = new AtomicInteger(1);
 
-        try (InputStream in = CSVReaderС.class.getClassLoader().getResourceAsStream(CSV_FILE_PATH);
+        try (InputStream in = CSVReaderC.class.getClassLoader().getResourceAsStream(filePath);
              InputStreamReader reader = in == null ? null : new InputStreamReader(in)) {
             if (reader == null) {
-                throw new FileNotFoundException(CSV_FILE_PATH);
+                throw new FileNotFoundException(filePath);
             }
 
             CSVParser parser = new CSVParserBuilder().withSeparator(SEPARATOR).build();

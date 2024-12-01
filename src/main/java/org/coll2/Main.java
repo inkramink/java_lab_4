@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        CSVReaderС csvReaderExample = new CSVReaderС();
-        List<Person> people = csvReaderExample.readCSV();
+        CSVReaderC csvReaderExample = new CSVReaderC();
+        List<Person> people = csvReaderExample.readCSV("testfile.csv");
 
         for (Person person : people) {
             System.out.println(person);
