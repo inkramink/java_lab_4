@@ -26,7 +26,6 @@ public class CSVReaderC {
      *
      * @param filePath the path to the CSV file
      * @return a list of Person objects parsed from the CSV file
-     * @throws FileNotFoundException if the file is not found
      */
     public List<Person> readCSV(String filePath) {
         List<Person> people = new ArrayList<>();
